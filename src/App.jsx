@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-import Book from "./pages/Books";
+import BooksPage from "./pages/Books";
 import Footer from "./components/Footer";
 import {books} from "./data";
 import BookInfo from "./pages/BookInfo";
@@ -54,7 +54,7 @@ function App() {
         <Nav  numberOfItems={numberOfItems()} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/books" exact element={<Book books={books} />} />
+          <Route path="/books" exact element={<BooksPage books={books} />} />
           <Route
             path="/books/:id"
             element={
@@ -81,22 +81,3 @@ function App() {
 
 export default App;
 
-// function addToCart(book){
-//   const dupeItem = cart.find(item=> +item.id === +book.id)
-//   if (dupeItem ){
-//     setCart(cart.map(item=> {
-//       if(item.id === dupeItem.id){
-//         return{
-//           ...item,
-//           quantity: item.quantity + 1,
-//         }
-//       }
-//       else{
-//         return item
-//       }
-//     }))
-//   }
-//   else{
-//     setCart([...cart, {...book, quantity:1}]);
-//   }
-// }

@@ -9,7 +9,7 @@ const Landing = () => {
             <div className="header__container">
                 <div className="header__description">
                     <h1>
-                        Australia's most awarded online library platform
+                        Best Book Store in the World!
                     </h1>
                     <h2>
                         Find your dream book!

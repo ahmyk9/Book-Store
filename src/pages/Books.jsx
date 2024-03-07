@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Book from '../components/ui/Book'
-import {books} from '../data'
+import {books as books2} from "../data";
 
 
 
-const Books = ({books: initialBooks}) => {
-  const [books, setBooks] = useState(initialBooks);
+// const Books = ({books: initialBooks}) => {
+const Books = () => {
+
+
+  const [books, setBooks] = useState(books2);
 
   function filterBooks(filter){
     console.log(filter)
     if (filter === 'LOW__TO__HIGH'){
       setBooks(books.slice().sort((a,b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)))
-
-
     }
     if (filter === 'HIGH__TO__LOW'){
       setBooks(books.slice().sort((a,b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)))
